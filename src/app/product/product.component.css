@@ -1,0 +1,10 @@
+.product-wrapper {
+  color: lightseagreen;
+  padding: 10px;
+  text-align: center;
+}
+
+.product-item img {
+  max-width: 100%;
+  max-height: 200px;
+}

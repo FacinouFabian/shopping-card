@@ -1,0 +1,15 @@
+.card-item-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  text-align: center;
+  width: 60px;
+}
+
+.card-item-wrapper > div {
+  flex-grow: 1;
+  color: #436f85;
+  text-align: center;
+}

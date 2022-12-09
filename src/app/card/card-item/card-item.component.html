@@ -1,0 +1,33 @@
+<div class="card-item-wrapper" [ngStyle]="{ color: 'blue' }">
+  <div>
+    {{ cardItem.name }}
+  </div>
+  <div>{{ cardItem.price }} USD</div>
+  <div>
+    <input
+      type="number"
+      value="{{ cardItem.quantity }}"
+      min="1"
+      id="{{ cardItem.id }}"
+      [(ngModel)]="cardItem.quantity"
+      (change)="onBasketItemChanged($event)"
+    />
+  </div>
+  <div>{{ cardItem.quantity * cardItem.price }} USD</div>
+  <div>
+    <button
+      type="button"
+      class="btn btn-default"
+      aria-label="Left Align"
+      id="{{ cardItem.id }}"
+      (click)="onBasketItemDeleted($event)"
+    >
+      <span
+        class="glyphicon glyphicon-remove"
+        aria-hidden="true"
+        id="{{ cardItem.id }}"
+      >
+      </span>
+    </button>
+  </div>
+</div>

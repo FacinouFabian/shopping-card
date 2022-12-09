@@ -1,0 +1,8 @@
+<h1>Card</h1>
+<app-card
+  [cardItems]="basket"
+  [basketTotal]="cardTotal"
+  (cardItemDeleted)="onBasketItemDeleted($event)"
+  (basketItemChanged)="onBasketItemChanged($event)"
+>
+</app-card>

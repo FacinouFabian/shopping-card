@@ -1,0 +1,27 @@
+<div class="card-wrapper">
+  <div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">
+      <div>Item</div>
+      <div>Price</div>
+      <div>Quantity</div>
+      <div>Total Price</div>
+      <div></div>
+    </div>
+
+    <!-- Table -->
+    <div class="list-group">
+      <app-carditem
+        class="list-group-item"
+        *ngFor="let item of cardItems; let i = index"
+        [cardItem]="item"
+        (cardItemDeleted)="onBasketItemDeleted($event)"
+        (basketItemChanged)="onBasketItemChanged($event)"
+      >
+      </app-carditem>
+    </div>
+    <div class="panel-footer">
+      <h4>Total {{ basketTotal }}</h4>
+    </div>
+  </div>
+</div>
