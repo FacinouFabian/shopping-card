@@ -10,6 +10,8 @@ import { LocalService } from '../services/local.service';
 export class ShopComponent implements OnInit {
   cardTotal: number = 0;
   basket: CardItem[] = [];
+  title: string = 'Lot of surprises are waiting for you';
+  titleStyle: string = 'title-default';
   @Output() basketItemChanged = new EventEmitter<{
     productId: number;
     quantity: number;
@@ -19,7 +21,16 @@ export class ShopComponent implements OnInit {
 
   ngOnInit() {
     this.localService.init();
-    /* this.updateBasket(); */
+  }
+
+  onProductMouseEnter(title: any) {
+    this.title = title;
+    this.titleStyle = 'title-product';
+  }
+
+  onProductMouseLeave() {
+    this.title = 'Lot of surprises are waiting for you';
+    this.titleStyle = 'title-default';
   }
 
   // triggered when the basket data changes

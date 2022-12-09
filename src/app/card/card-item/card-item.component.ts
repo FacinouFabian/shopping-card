@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { LocalService } from '../../services/local.service';
 import { CardItem } from '../card.model';
 
 @Component({
@@ -7,6 +8,7 @@ import { CardItem } from '../card.model';
   styleUrls: ['./card-item.component.css'],
 })
 export class CardItemComponent implements OnInit {
+  imageUrl: string = '';
   @Input() cardItem: CardItem;
   @Output() cardItemDeleted = new EventEmitter<{
     productId: number;
@@ -34,9 +36,18 @@ export class CardItemComponent implements OnInit {
     });
   }
 
-  constructor() {
+  constructor(private localService: LocalService) {
     this.cardItem = new CardItem(0, '', 0, 0);
   }
 
-  ngOnInit() {}
+  getImageUrl() {
+    const item = this.localService.getProductByName(this.cardItem.name);
+    if (item) {
+      this.imageUrl = item.imageUrl;
+    }
+  }
+
+  ngOnInit() {
+    this.getImageUrl();
+  }
 }

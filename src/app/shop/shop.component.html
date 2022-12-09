@@ -1,2 +1,7 @@
-<h1>Products</h1>
-<app-product (cardUpdated)="onBasketUpdated($event)"> </app-product>
+<h1 [ngClass]="titleStyle">{{ title }}</h1>
+<app-product
+  (cardUpdated)="onBasketUpdated($event)"
+  (mouseEnter)="onProductMouseEnter($event)"
+  (mouseLeave)="onProductMouseLeave()"
+>
+</app-product>

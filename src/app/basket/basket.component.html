@@ -1,8 +1,10 @@
-<h1>Card</h1>
+<h1>Basket</h1>
 <app-card
+  *ngIf="basket.length > 0"
   [cardItems]="basket"
   [basketTotal]="cardTotal"
   (cardItemDeleted)="onBasketItemDeleted($event)"
   (basketItemChanged)="onBasketItemChanged($event)"
 >
 </app-card>
+<div *ngIf="basket.length === 0">Your basket is empty.</div>

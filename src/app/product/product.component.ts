@@ -16,7 +16,8 @@ export class ProductComponent implements OnInit {
     productPrice: number;
   }>();
 
-  @Output() productHover = new EventEmitter();
+  @Output() mouseEnter = new EventEmitter<string>();
+  @Output() mouseLeave = new EventEmitter();
 
   constructor(private localService: LocalService) {}
 
@@ -36,7 +37,15 @@ export class ProductComponent implements OnInit {
     });
   }
 
-  onProductHover() {
-    this.productHover.emit();
+  onMouseEnter(event: any) {
+    const id = event.target.getAttribute('id');
+    const product = this.products.find((elem) => elem.id == id);
+    if (product) {
+      this.mouseEnter.emit(product.name);
+    }
+  }
+
+  onMouseLeave() {
+    this.mouseLeave.emit();
   }
 }

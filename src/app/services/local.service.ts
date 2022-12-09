@@ -52,6 +52,14 @@ export class LocalService {
     return JSON.parse(productsArray as string);
   }
 
+  public getProductByName(name: string) {
+    const productsString = localStorage.getItem('products');
+    const productsArray: ProductItem[] = JSON.parse(productsString as string);
+    const item = productsArray.find((elem) => elem.name == name);
+
+    return item;
+  }
+
   public getBasket() {
     const basketArray = localStorage.getItem('basket');
 

@@ -1,11 +1,17 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default bg-primary">
   <div class="container-fluid">
-    <div class="navbar-default">
-      <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a routerLink="/shop">shop</a></li>
-        <li routerLinkActive="active"><a routerLink="/basket">basket</a></li>
-      </ul>
-    </div>
+    <ul class="nav navbar-nav d-flex flex-row">
+      <div class="p-2">
+        <li routerLinkActive="active">
+          <a class="text-white" routerLink="/shop">Myshop</a>
+        </li>
+      </div>
+      <div class="p-2">
+        <li routerLinkActive="active">
+          <a class="text-white" routerLink="/basket">basket</a>
+        </li>
+      </div>
+    </ul>
     <span>{{ title }}</span>
   </div>
 </nav>

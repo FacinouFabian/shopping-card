@@ -5,3 +5,11 @@
 h1 {
   font-family: "Lato", sans-serif;
 }
+
+.title-default {
+  color: black;
+}
+
+.title-product {
+  color: #0d6efd;
+}

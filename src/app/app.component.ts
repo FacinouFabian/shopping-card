@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,16 +6,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @Output() productHover = new EventEmitter();
-
   title = 'shopping-card';
   loadedFeature = 'recipe';
 
   onNavigate(feature: string) {
     this.loadedFeature = feature;
-  }
-
-  onProductHover() {
-    console.log('hey');
   }
 }

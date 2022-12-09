@@ -2,7 +2,10 @@
   <div>
     {{ cardItem.name }}
   </div>
-  <div>{{ cardItem.price }} USD</div>
+  <div style="width: 100px; height: 150px">
+    <img src="{{ imageUrl }}" alt="" style="width: 100%; height: 100%" />
+  </div>
+  <div>{{ cardItem.price }}$</div>
   <div>
     <input
       type="number"
@@ -13,7 +16,7 @@
       (change)="onBasketItemChanged($event)"
     />
   </div>
-  <div>{{ cardItem.quantity * cardItem.price }} USD</div>
+  <div>{{ cardItem.quantity * cardItem.price }}$</div>
   <div>
     <button
       type="button"
